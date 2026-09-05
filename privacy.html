@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy policy — Shoebill</title>
+<meta name="description" content="Shoebill's privacy policy. There is no account, there is no server of ours, and there is no analytics." />
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="img/icon.png" alt="" />Shoebill</a>
+    <nav>
+      <a href="index.html">Overview</a>
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <span class="spacer"></span>
+    <a class="btn" href="https://testflight.apple.com/join/REPLACE">Join the beta</a>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <h1>Privacy policy</h1>
+    <p>Last updated 5 September 2026</p>
+  </div>
+</section>
+
+<div class="wrap">
+<article class="doc">
+
+<p>This policy describes how the iOS app published by ninjahawk under the bundle identifier <code>com.ninjahawk.slot03</code> handles information. It is written against the app's own source code; every claim below can be checked in it.</p>
+
+<div class="callout">
+  <h2>The short version</h2>
+  <p>There is no account, there is no server of ours, and there is no analytics. The app runs entirely on your phone. It reads public posts by calling public APIs directly from the device, ranks them on the device, and stores what it remembers on the device.</p>
+</div>
+
+<h2>No account is required</h2>
+<p>You can install the app and read the whole feed without signing in or giving us anything. Signing in is optional and exists only so you can post, reply, like, repost, bookmark or follow using <strong>your own</strong> account on <strong>another</strong> service (Mastodon or Bluesky). There is no account with us to create, and we hold no user record of any kind.</p>
+
+<h2>We do not operate a server</h2>
+<p>The app has no backend. Nothing is proxied through us, nothing about what you read is sent to us, and no copy of your feed, your interests or your activity exists anywhere but on your phone.</p>
+
+<h2>Services your device contacts directly</h2>
+<p>Because the app talks to these services straight from your phone, each one receives your device's IP address and the requests it makes, exactly as a web browser visiting the same site would. Their own privacy policies apply to what they do with that. We receive none of it.</p>
+<ul>
+  <li><strong>Mastodon instances</strong> — public timelines, trends, hashtag timelines, threads, profiles and search, across roughly sixteen public servers.</li>
+  <li><strong>Bluesky</strong> — <code>public.api.bsky.app</code>, <code>api.bsky.app</code> and <code>bsky.social</code> for public feeds, posts and, if you sign in, your session.</li>
+  <li><strong>Hacker News</strong> — <code>hacker-news.firebaseio.com</code> (Firebase) and <code>hn.algolia.com</code> (Algolia) for stories and comments.</li>
+  <li><strong>Lemmy and PieFed instances</strong> — public community feeds and comments.</li>
+  <li><strong>Lobsters</strong> — <code>lobste.rs</code> public JSON.</li>
+  <li><strong>4chan</strong> — <code>a.4cdn.org</code> and <code>i.4cdn.org</code> for public thread JSON and images.</li>
+  <li><strong>Steam</strong> — <code>store.steampowered.com</code> and <code>cdn.cloudflare.steamstatic.com</code> for public game reviews and artwork.</li>
+  <li><strong>Imgur</strong> — <code>api.imgur.com</code> and <code>i.imgur.com</code>. Inert unless a client id is configured in the build.</li>
+  <li><strong>ESPN, Kalshi and CoinGecko</strong> — public scores, event odds and coin prices for the cards on the Explore screen.</li>
+  <li><strong>Link hosts</strong> — when a post links out, the app fetches that page's own metadata and preview image to draw the card, and loads pictures and video from wherever the post's network hosts them (including image CDNs such as <code>i.ytimg.com</code>). Opening a link in the app's built-in browser loads that site normally, so the site sees your device as any browser visit would.</li>
+</ul>
+<p>We do not add identifiers to these requests, and none of them carries an account of ours, because there isn't one.</p>
+
+<h2>What is stored, and where</h2>
+
+<h3>On your device only</h3>
+<p>All of the following is kept in the app's own storage (<code>UserDefaults</code> and files inside the app's container). It is never uploaded.</p>
+<ul>
+  <li><strong>Seen-post ledger</strong> — which posts you have already been shown, so the feed does not repeat itself.</li>
+  <li><strong>Interest profile</strong> — a set of weights the ranker learns from what you open, linger on, save or skip.</li>
+  <li><strong>Saved posts and bookmarks</strong>, and the list of posts kept for offline reading (the "reserve"), stored as files in the app's Application Support directory.</li>
+  <li><strong>Image cache</strong> — pictures the feed has loaded, held in memory and in the system URL cache on the device.</li>
+  <li><strong>Mutes and blocks</strong> — the accounts, domains and words you have muted or blocked. Stored locally on purpose, so they work when you are signed out.</li>
+  <li><strong>Reports you have filed</strong> — the post's address, the account's handle, the category you picked and any note, listed under Settings, Your reports.</li>
+  <li><strong>Settings</strong> — appearance, notification preferences, sensitive-content settings, pinned tabs, reserve size.</li>
+  <li><strong>Usage counters</strong> — a per-day count of opens, refreshes and posts opened, used by the app for its own decisions (such as when to ask about notifications). It has nowhere to go and is not sent anywhere.</li>
+</ul>
+
+<h3>In the iOS Keychain</h3>
+<p>If you sign in, that service's access token is stored in the Keychain, one entry per account, and is used only to talk to that service. Signing out deletes it. You can also revoke the app's access from the service's own settings at any time (on Mastodon, Preferences, Account, Authorized apps; on Bluesky, Settings, App passwords, which is the only way the app signs in there).</p>
+
+<h3>How to clear it</h3>
+<p>Blocks, mutes and reports are managed in Settings; the interest profile has a Reset button there; the offline reserve is emptied by setting its size to Off; signing out removes the tokens. Deleting the app removes everything above, including the Keychain entries, because none of it exists anywhere else.</p>
+
+<h2>Notifications</h2>
+<p>Notifications, if you turn them on, are scheduled locally by the app from content it has already fetched. There is no push server, no device token is sent anywhere, and we have no way to send you a message.</p>
+
+<h2>No analytics, no ads, no tracking</h2>
+<p>The app contains no analytics SDK, no advertising SDK, no attribution or crash-reporting SDK, and no tracking of any kind. It does not use the advertising identifier and does not ask for App Tracking Transparency permission, because it has nothing to track with.</p>
+<p><strong>Third-party code.</strong> The app has exactly one third-party dependency: <a href="https://github.com/kean/Nuke">Nuke</a>, an open-source image loading library. It loads and caches pictures on the device and sends nothing anywhere on its own. There are no others.</p>
+<p>Apple's App Store Connect reports aggregate, anonymised install and session figures to developers for any app on the store; that comes from Apple and is controlled by your device's own "Share With App Developers" analytics setting, not by this app.</p>
+
+<h2>Reports and moderation</h2>
+<p>Filing a report hides the post for you immediately and records it on your device. It also opens your mail app with a pre-filled message — the post's address, the account, the network, the reason you chose and the app version — addressed to the support address below. That message is sent by you, from your mail account, and is read by a person; reports are acted on within 24 hours. If you are signed in to Mastodon and the post is a Mastodon post, the report is additionally sent to that account's own server through Mastodon's public reports API, so a moderator there can act on the account.</p>
+
+<h2>Children</h2>
+<p>The app is not directed at children. It shows unmoderated public posts from open social networks and is rated accordingly on the App Store. We do not knowingly collect information from anyone, of any age, because the app collects nothing.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version replaces this page and the date at the top changes with it.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy, or anything else: <a href="mailto:icebreakermint10@gmail.com">icebreakermint10@gmail.com</a></p>
+
+</article>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html"><img src="img/icon.png" alt="" />Shoebill</a>
+        <p>One feed from the open social web, ranked on your phone.</p>
+      </div>
+      <div>
+        <h4>App</h4>
+        <ul>
+          <li><a href="index.html">Overview</a></li>
+          <li><a href="index.html#how">How it works</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="https://testflight.apple.com/join/REPLACE">Join the beta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="support.html#report">Report a post</a></li>
+          <li><a href="support.html#block">Block and mute</a></li>
+          <li><a href="mailto:icebreakermint10@gmail.com">icebreakermint10@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="support.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <p>Not affiliated with Mastodon, Bluesky, Hacker News, Lemmy or Lobsters.</p>
+      <p>2026 Nathan Langley</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

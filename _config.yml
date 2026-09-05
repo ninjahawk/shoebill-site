@@ -1,0 +1,24 @@
+title: Shoebill
+description: Documentation for the Shoebill iPhone app.
+url: https://shoebill.nathanlangley.dev
+baseurl: ""
+
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-remote-theme
+
+color_scheme: shoebill
+search_enabled: true
+
+aux_links:
+  "Site": ["/"]
+aux_links_new_tab: false
+
+footer_content: "Contact: icebreakermint10@gmail.com — reports are answered within 24 hours. Not affiliated with any network shown."
+
+include:
+  - wiki
+
+exclude:
+  - README.md

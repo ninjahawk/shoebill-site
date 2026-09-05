@@ -12,11 +12,38 @@ privacy.html   the privacy policy (App Store Connect: Privacy Policy URL)
 support.html   contact, reporting, blocking (App Store Connect: Support URL)
 style.css      the single shared stylesheet
 img/           app icon, favicon, and four real device screenshots
+wiki/          the knowledge wiki, Markdown, built by Jekyll
+_config.yml    Jekyll + Just the Docs configuration for the wiki
+_sass/         the Just the Docs colour scheme that matches style.css
 CNAME          the custom domain, required by GitHub Pages
-.nojekyll      stops Pages running Jekyll over the folder
 robots.txt     allows all crawlers
-sitemap.xml    the three pages
+sitemap.xml    the pages
 ```
+
+## How the wiki is built
+
+The three HTML pages above are plain files with no front matter, so Jekyll
+copies them through untouched. The wiki is different: `wiki/*.md` is Markdown
+with Just the Docs front matter, and GitHub Pages builds it.
+
+- `_config.yml` sets `remote_theme: just-the-docs/just-the-docs` with the
+  `jekyll-remote-theme` plugin, `search_enabled: true`, `color_scheme: shoebill`,
+  an `aux_links` entry back to the site root, and the footer contact line.
+- `_sass/color_schemes/shoebill.scss` imports the theme's dark scheme and then
+  restates every colour with the values from `style.css`.
+- **There must be no `.nojekyll` file.** Its presence stops Pages running Jekyll
+  at all, which would serve the wiki as raw Markdown. It has been removed.
+- Nothing here can be built or previewed on a Windows machine without Ruby and
+  Jekyll installed. The build that matters is GitHub's.
+
+**Where to check the build.** After a push, open the repo's **Actions** tab and
+look at the most recent **"pages build and deployment"** run. Green means the
+site rebuilt; red means Jekyll failed, and the log names the file and line.
+A Jekyll failure takes the whole site down, not just the wiki, so check it after
+any change to `_config.yml`, `_sass/` or a page's front matter.
+
+To add a wiki page: create `wiki/NAME.md`, give it front matter with
+`layout: default`, a `title`, and a `nav_order`, and add it to `sitemap.xml`.
 
 ## Before you publish
 
@@ -73,11 +100,13 @@ real public beta link from App Store Connect.
    - `https://shoebill.nathanlangley.dev/` — marketing (App Store Connect: Marketing URL)
    - `https://shoebill.nathanlangley.dev/privacy.html` — Privacy Policy URL, required
    - `https://shoebill.nathanlangley.dev/support.html` — Support URL, required
+   - `https://shoebill.nathanlangley.dev/wiki/` — the wiki
 
 ## Updating it
 
-Edit the files, commit, push. Pages redeploys in about a minute. There is
-nothing to rebuild.
+Edit the files, commit, push. Pages redeploys in about a minute. The HTML
+pages need no build; the wiki is rebuilt by Jekyll on GitHub, so watch the
+Actions tab if a wiki page or the config changed.
 
 ## Assets
 

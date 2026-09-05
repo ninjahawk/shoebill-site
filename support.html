@@ -7,25 +7,33 @@
 <meta name="description" content="Contact, reporting, blocking and account help for the Shoebill iPhone app. Reports are answered within 24 hours." />
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="index.html"><img src="img/icon.png" alt="" />Shoebill</a>
-    <nav>
-      <a href="index.html">Overview</a>
-      <a href="index.html#how">How it works</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="support.html" class="here">Support</a>
-    </nav>
-    <span class="spacer"></span>
-    <a class="btn" href="https://testflight.apple.com/join/REPLACE">Join the beta</a>
+<input type="checkbox" id="menu" class="menu-toggle" hidden />
+<header class="bar">
+  <div class="wrap bar-in">
+    <label for="menu" class="burger" aria-label="Menu"><span></span><span></span><span></span></label>
+    <div class="bar-end">
+      <a class="beta" href="https://testflight.apple.com/join/REPLACE">Beta</a>
+      <a class="mark" href="index.html"><img src="img/icon.png" alt="Shoebill" width="44" height="44" /></a>
+    </div>
   </div>
 </header>
+<nav class="menu">
+  <div class="wrap">
+    <a href="index.html">Overview</a>
+    <a href="/wiki/">Wiki</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </div>
+</nav>
 
-<section class="page-head">
+<section class="page">
   <div class="wrap">
     <h1>Support</h1>
     <p>Shoebill is an iPhone app that reads public posts from Mastodon, Bluesky, Hacker News, Lemmy and Lobsters and shows them as one ranked feed.</p>
@@ -101,43 +109,10 @@
 </article>
 </div>
 
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="brand" href="index.html"><img src="img/icon.png" alt="" />Shoebill</a>
-        <p>One feed from the open social web, ranked on your phone.</p>
-      </div>
-      <div>
-        <h4>App</h4>
-        <ul>
-          <li><a href="index.html">Overview</a></li>
-          <li><a href="index.html#how">How it works</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-          <li><a href="https://testflight.apple.com/join/REPLACE">Join the beta</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Help</h4>
-        <ul>
-          <li><a href="support.html">Support</a></li>
-          <li><a href="support.html#report">Report a post</a></li>
-          <li><a href="support.html#block">Block and mute</a></li>
-          <li><a href="mailto:icebreakermint10@gmail.com">icebreakermint10@gmail.com</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <ul>
-          <li><a href="privacy.html">Privacy policy</a></li>
-          <li><a href="support.html#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-legal">
-      <p>Not affiliated with Mastodon, Bluesky, Hacker News, Lemmy or Lobsters.</p>
-      <p>2026 Nathan Langley</p>
-    </div>
+    <p class="foot-links"><a href="/wiki/">Wiki</a><a href="support.html">Support</a><a href="privacy.html">Privacy</a><a href="mailto:icebreakermint10@gmail.com">icebreakermint10@gmail.com</a></p>
+    <p class="foot-note">Not affiliated with Mastodon, Bluesky, Hacker News, Lemmy or Lobsters.</p>
   </div>
 </footer>
 

@@ -1,0 +1,25 @@
+// Shoebill — a Just the Docs colour scheme matching shoebill.nathanlangley.dev.
+// Built on the theme's own dark scheme, then every colour it defines is
+// re-stated with the values from style.css. Variable names are the ones the
+// theme declares in _sass/color_schemes/dark.scss.
+
+@import "./color_schemes/dark";
+
+$body-background-color: #000000;
+$sidebar-color: #000000;
+$body-heading-color: #ffffff;
+$body-text-color: #cfcfcf;
+$link-color: #e8a83a;
+$nav-child-link-color: #8b8b8b;
+$base-button-color: #0b0b0b;
+$btn-primary-color: #e8a83a;
+$code-background-color: #0b0b0b;
+$code-linenumber-color: #8b8b8b;
+$feedback-color: #0b0b0b;
+$table-background-color: #0b0b0b;
+$search-background-color: #0b0b0b;
+$search-result-preview-color: #8b8b8b;
+$border-color: #1f1f1f;
+
+$body-font-family: -apple-system, blinkmacsystemfont, "SF Pro Text", "Inter",
+  "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif;
